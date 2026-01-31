@@ -22,9 +22,12 @@ public class EnemyMove : MonoBehaviour
     }
     public GameObject explosionPrefab;
 
-    void Die()
+    void OnTriggerEnter2D(Collider2D other)
     {
-        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        if (other.CompareTag("PlayerBullet"))
+        {
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
     }
 }

@@ -15,6 +15,7 @@ TagManager:
   - PlayerRay
   - Rocket
   - PlayerBullet
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX
