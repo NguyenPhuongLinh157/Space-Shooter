@@ -9,7 +9,7 @@ public class EnemyBullet : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Vector2.down * speed * Time.deltaTime);
+        transform.Translate(Vector3.down * speed * Time.deltaTime);
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -19,5 +19,9 @@ public class EnemyBullet : MonoBehaviour
             Destroy(gameObject);
             // Sau này có PlayerHP thì xử lý tại đây
         }
+    }
+    void OnBecameInvisible()
+    {
+        Destroy(gameObject);
     }
 }
